@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#logoutButton{
+    cursor: pointer;
+    transition: color 0.2s ease; /* Transición suave del color durante 0.5 segundos */
+}
+
+#logoutButton:hover{
+    color:red;
+}
+
+#userContainer{
+    display: none;
+}

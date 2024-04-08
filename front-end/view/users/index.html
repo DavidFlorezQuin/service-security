@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabla de Datos</title>
+        <link rel="stylesheet" href="/css/role.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        
+        <iframe src="../../navbar.html" width="100%" ></iframe>
+    <!-- MODAL -->
+    
+    <div class="container">
+        <!-- Button trigger modal -->
+      <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="width: 140%; height: 150%; ">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Role</h1>
+                  <button type="button" class="btn-close" style=" background-color: red;" data-bs-dismiss="modal" aria-label="Close" onclick="clearData();"></button>
+                </div>
+                <div class="modal-body" >
+                    <div class="container">
+                        <div id="inputdata">
+                            <form id="form-role" class="row g-3 needs-validation" novalidate*class="row g-3 needs-validation" novalidate>
+                                <fieldset class="formulario">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Nombre</label>
+                                        <div class="col-sm-8">
+                                            <input type="hidden" name="id" id="id" value="">
+                                            <input type="text" class="form-control" name="name" id="name" value=""
+                                            required  placeholder="Ingresar ussername">
+                                  <br>    
+                                </div>
+                                
+                                <label class="col-sm-3 col-form-label">Descripción</label>
+                                <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="description" id="description" value=""
+                                            required  placeholder="Ingresar password">
+                                            <br>    
+                                        </div>
+    
+                                </fieldset>
+                            </div>
+                        </div>
+                    <div class="modal-footer">
+    
+                                <button class="btn btn-success" type="submit" data-bs-dismiss="modal">Agregar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- TABLA -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="140" height="114" fill="green" class="bi bi-cloud-plus" viewBox="0 0 16 16" style="position: relative; float: right; height: 43px;" alt="Agregar" class="new" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5"/>
+        <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+    </svg>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th>id</th>
+                <th>User</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="resultData">
+             <!-- Aquí llegan los datos de la bd -->                    
+        </tbody>
+    </table>
+    
+    
+    <form class="col-11 m-lg-4 d-flex flex-column visually-hidden" id="formEdit">
+        <div class="row">
+            <div class="col-2">
+            <label  class="form-label fw-bold">Id</label>
+            <input disabled type="text" class="form-control" id="idEdit">
+            </div>
+        <div class="col-4 mx-3">
+            <label  class="form-label fw-bold">Nombre</label>
+            <input disabled type="text" class="form-control" id="nameEdit">
+          </div>
+          <div class="col-4">
+            <label class="form-label fw-bold">Descripcion</label>
+            <input disabled type="text" class="form-control" id="descriptionEdit">
+          </div>
+
+        </div>
+        <hr>
+        <div class="row">
+            <h4 class="text-black-50 my-3">Roles:</h4>
+            <div id="rolesData"></div>
+        </div>
+        </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/users.js"></script>
+</body>
+</html>
